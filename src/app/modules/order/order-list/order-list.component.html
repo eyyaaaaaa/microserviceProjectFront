@@ -1,0 +1,9 @@
+<h2>Liste des commandes</h2>
+
+<ul>
+  <li *ngFor="let order of orders">
+    {{ order.orderNumber }}
+  </li>
+</ul>
+
+<button (click)="goToAddOrder()">Ajouter une commande</button>
