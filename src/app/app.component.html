@@ -1,6 +1,6 @@
-<nav>
+<nav *ngIf="isLoggedIn()">
   <a routerLink="/product" routerLinkActive="active">Product</a>
   <a routerLink="/chat" routerLinkActive="active">Chat</a>
+  <a routerLink="/profile" routerLinkActive="active">Profile</a>
 </nav>
-
 <router-outlet></router-outlet>
