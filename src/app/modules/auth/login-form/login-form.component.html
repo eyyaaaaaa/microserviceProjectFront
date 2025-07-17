@@ -1,0 +1,21 @@
+<div class="login-page d-flex justify-content-center align-items-center vh-100">
+    <div class="login-form bg-light p-5 rounded shadow" style="max-width: 480px; width: 100%;">
+        <h2 class="mb-4 text-center">Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input formControlName="username" id="username" type="text" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input formControlName="password" id="password" type="password" class="form-control" />
+            </div>
+            <button class="btn btn-primary w-100 mb-3" type="submit">Login</button>
+        </form>
+
+        <div class="text-center">
+            <span>Don't have an account? </span>
+            <a routerLink="/auth/register" class="btn btn-outline-danger btn-sm">Register</a>
+        </div>
+    </div>
+</div>

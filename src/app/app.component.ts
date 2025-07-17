@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chat-app-front';
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('auth_token');
+  }
 }
