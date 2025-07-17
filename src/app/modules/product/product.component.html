@@ -1,1 +1,13 @@
-<p>product works!</p>
+<div class=" create-btn-wrapper d-flex justify-content-end mb-3">
+  <button class=" create-btn btn btn-primary" (click)="goToCreateProduct()">Create</button>
+</div>
+<div class="product-list">
+  <div class="product-card" *ngFor="let product of products">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p><strong>Price:</strong> {{ product.price }}</p>
+    <button mat-raised-button color="accent" (click)="openReviewDialog(product)">
+      Give Review
+    </button>
+  </div>
+</div>
