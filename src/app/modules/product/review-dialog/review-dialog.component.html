@@ -1,0 +1,6 @@
+<h2>Give a Review for {{ data.product.name }}</h2>
+<textarea [(ngModel)]="reviewText" rows="5" cols="40" placeholder="Write your review here..."></textarea>
+<br>
+<button mat-button color="primary" (click)="submitReview()">Submit</button>
+<button mat-button (click)="cancel()">Cancel</button>
+
