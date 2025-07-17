@@ -1,0 +1,12 @@
+<h2>Ajouter une nouvelle commande</h2>
+
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+  <label for="orderNumber">Numéro de commande :</label>
+  <input id="orderNumber" formControlName="orderNumber" />
+
+  <div *ngIf="orderForm.get('orderNumber')?.invalid && orderForm.get('orderNumber')?.touched" style="color:red">
+    Le numéro de commande est requis.
+  </div>
+
+  <button type="submit" [disabled]="orderForm.invalid">Ajouter</button>
+</form>
