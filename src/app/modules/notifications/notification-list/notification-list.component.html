@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Notifications</h2>
+
+    <div *ngIf="notifications.length === 0" class="text-muted">No notifications found.</div>
+
+    <div *ngFor="let notification of notifications" class="card mb-3 shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">{{ notification.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+                {{ notification.notificationType }} •
+                <span *ngIf="notification.date">{{ notification.date | date:'medium' }}</span>
+            </h6>
+            <p class="card-text" *ngIf="notification.shortDescription">
+                {{ notification.shortDescription }}
+            </p>
+            <p class="card-text">
+                {{ notification.description }}
+            </p>
+
+            <span *ngIf="notification.status" class="badge" [ngClass]="{
+              'bg-warning': notification.status === 'PENDING',
+              'bg-success': notification.status === 'RESOLVED',
+              'bg-secondary': !notification.status
+            }">
+                {{ notification.status }}
+            </span>
+        </div>
+    </div>
+</div>

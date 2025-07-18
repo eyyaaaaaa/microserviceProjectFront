@@ -6,8 +6,9 @@
     <h3>{{ product.name }}</h3>
     <p>{{ product.description }}</p>
     <p><strong>Price:</strong> {{ product.price }}</p>
-    <button mat-raised-button color="accent" (click)="openReviewDialog(product)">
+    <button mat-raised-button color="accent" (click)="openReviewDialog(product,true)">
       Give Review
     </button>
+
   </div>
 </div>

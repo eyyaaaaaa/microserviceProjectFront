@@ -20,6 +20,7 @@ export class OrderListComponent implements OnInit {
   loadOrders() {
     this.orderService.getOrders().subscribe(data => {
       this.orders = data;
+
     });
   }
 

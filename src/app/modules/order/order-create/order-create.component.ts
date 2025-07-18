@@ -25,12 +25,10 @@ export class OrderCreateComponent {
   onSubmit() {
     if (this.orderForm.invalid) return;
 
-    const newOrder: Order = {
-      orderNumber: this.orderForm.value.orderNumber
-    };
 
-    this.orderService.addOrder(newOrder).subscribe(() => {
-      this.router.navigate(['/order']);
-    });
+
+    /* this.orderService.addOrder(newOrder).subscribe(() => {
+       this.router.navigate(['/order']);
+     });*/
   }
 }

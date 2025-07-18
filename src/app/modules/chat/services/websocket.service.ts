@@ -21,9 +21,9 @@ export class WebsocketService {
   public connectionStatus$ = this.connectionSubject.asObservable();  // Observable for components to track connection status
 
 
-  connect (username:string){
+  connect(username: string) {
 
-    const socket = new SockJS('http://localhost:8081/ws');  // Initialize the SockJS WebSocket connection to the server
+    const socket = new SockJS('http://localhost:8089/ws');  // Initialize the SockJS WebSocket connection to the server
 
     // Configure the STOMP client with connection details
     this.stompClient = new Client({
@@ -54,12 +54,12 @@ export class WebsocketService {
       console.error('Broker reported error: ' + frame.headers['message']);  // Log the error message
       console.error('Additional details: ' + frame.body);  // Log additional error details
     };
-    
+
     this.stompClient?.activate();
   }
 
 
-  sendMessage(username:string, content:string){
+  sendMessage(username: string, content: string) {
     if (this.stompClient && this.stompClient.connected) {
       // Create a chat message object
       const chatMessage = { sender: username, content: content, type: 'CHAT' };
@@ -79,10 +79,10 @@ export class WebsocketService {
 
   }
 
-  disconnect(){
+  disconnect() {
     if (this.stompClient) {
       this.stompClient.deactivate();  // Deactivate the WebSocket connection
     }
   }
-  
+
 }

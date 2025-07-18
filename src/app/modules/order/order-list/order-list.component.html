@@ -3,6 +3,11 @@
 <ul>
   <li *ngFor="let order of orders">
     {{ order.orderNumber }}
+    <ul>
+      <li *ngFor="let item of order.orderLineItems">
+        SKU: {{ item.skuCode }}, Price: {{ item.price }}, Quantity: {{ item.quantity }}
+      </li>
+    </ul>
   </li>
 </ul>
 

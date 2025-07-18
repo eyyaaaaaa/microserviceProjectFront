@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
 
   constructor(private http: HttpClient, private dialog: MatDialog,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.http.get<any[]>('http://localhost:8081/api/product').subscribe(
@@ -23,14 +23,13 @@ export class ProductComponent implements OnInit {
     );
   }
 
-  openReviewDialog(product: any) {
+  openReviewDialog(product: any, review: boolean) {
     this.dialog.open(ReviewDialogComponent, {
       width: '400px',
-      data: { product }
+      data: { product, review }
     });
   }
-
   goToCreateProduct() {
-  this.router.navigate(['product/create']);
-}
+    this.router.navigate(['product/create']);
+  }
 }
